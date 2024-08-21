@@ -17,3 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+
+[dotnet]
+
+project/assembly_name="You Can Do It!"

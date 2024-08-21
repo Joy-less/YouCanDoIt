@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpqktaek8pr05"]
+[gd_scene load_steps=4 format=3 uid="uid://dpqktaek8pr05"]
 
 [ext_resource type="Texture2D" uid="uid://bir8x1daio6qs" path="res://addons/YouCanDoIt/Images/SpeechBubble.svg" id="1_pfykn"]
+[ext_resource type="AudioStream" uid="uid://pn7jy61658eh" path="res://addons/YouCanDoIt/Sounds/Nya.wav" id="2_vqfxa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c0lt8"]
 font_size = 18
@@ -76,3 +77,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 text_overrun_behavior = 3
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vqfxa")

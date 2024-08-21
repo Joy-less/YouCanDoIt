@@ -59,7 +59,6 @@ func _process(delta:float)->void:
 
 func reset_timer()->void:
 	timer_seconds = randf_range(min_interval_minutes, max_interval_minutes) * 60
-	timer_seconds = 5 # temporary
 
 func random_type()->String:
 	return messages.keys().pick_random()

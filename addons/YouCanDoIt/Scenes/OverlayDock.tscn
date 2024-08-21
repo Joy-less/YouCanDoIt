@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpqktaek8pr05"]
+
+[ext_resource type="Texture2D" uid="uid://bir8x1daio6qs" path="res://addons/YouCanDoIt/Images/SpeechBubble.svg" id="1_pfykn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c0lt8"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[node name="OverlayDock" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Girl" type="TextureRect" parent="Background"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -350.0
+offset_right = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpeechBubble" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = -440.0
+offset_right = -290.0
+offset_bottom = -90.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("1_pfykn")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="SpeechLabel" type="Label" parent="Background/SpeechBubble"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = -10.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_c0lt8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 3

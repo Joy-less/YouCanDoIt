@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v7yhbtls7bbi"
-path="res://.godot/imported/YouCanDoIt Screenshot 2.png-71a9fcc2842dded81e24c12e0d26f5bf.ctex"
+uid="uid://c1tikf281jdoy"
+path="res://.godot/imported/YouCanDoIt Screenshot 1.png-9e579e23768d3b0b4cdb55d86e2bdbc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Screenshots/YouCanDoIt Screenshot 2.png"
-dest_files=["res://.godot/imported/YouCanDoIt Screenshot 2.png-71a9fcc2842dded81e24c12e0d26f5bf.ctex"]
+source_file="res://Assets/YouCanDoIt Screenshot 1.png"
+dest_files=["res://.godot/imported/YouCanDoIt Screenshot 1.png-9e579e23768d3b0b4cdb55d86e2bdbc0.ctex"]
 
 [params]
 

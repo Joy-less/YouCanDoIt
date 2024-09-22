@@ -21,7 +21,3 @@ window/size/viewport_height=540
 [dotnet]
 
 project/assembly_name="You Can Do It!"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/YouCanDoIt/plugin.cfg")

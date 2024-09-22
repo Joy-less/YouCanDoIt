@@ -10,22 +10,29 @@ extends EditorPlugin
 
 var export_stripper:EditorExportPlugin = YouCanDoItExportStripper.new()
 var overlay_dock:Control = load(addon_path.path_join("Scenes/OverlayDock.tscn")).instantiate()
+var catalog_dock:Control = load(addon_path.path_join("Scenes/CatalogDock.tscn")).instantiate()
 var messages:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(addon_path.path_join("Text/Messages.json")))
 var timer_seconds:float = 0
 
 const addon_path:String = "res://addons/YouCanDoIt"
+const save_path:String = "user://YouCanDoItSave.json"
 
 func _enter_tree()->void:
 	reset_timer()
 	overlay_dock.hide()
-	# Add dock
+	# Add docks
 	EditorInterface.get_editor_main_screen().add_child(overlay_dock)
+	add_control_to_bottom_panel(catalog_dock, "Girl Catalog")
 	# Add export stripper
 	add_export_plugin(export_stripper)
+	# Fill initial catalog
+	fill_catalog()
 
 func _exit_tree()->void:
-	# Cleanup dock
+	# Remove docks
 	overlay_dock.queue_free()
+	remove_control_from_bottom_panel(catalog_dock)
+	catalog_dock.queue_free()
 	# Remove export stripper
 	remove_export_plugin(export_stripper)
 
@@ -40,9 +47,13 @@ func _process(delta:float)->void:
 	
 	# Show overlay
 	var type:String = random_type()
+	var girl:Texture2D = random_girl(type)
 	overlay_dock.get_node("Background/SpeechBubble/SpeechLabel").text = random_message(type)
-	overlay_dock.get_node("Background/Girl").texture = random_girl(type)
+	overlay_dock.get_node("Background/Girl").texture = girl
 	overlay_dock.show()
+	
+	# Save girl as seen
+	save_seen_girl(girl.resource_path)
 	
 	# Transition overlay in
 	await transition_overlay(true)
@@ -81,6 +92,13 @@ func random_sound()->AudioStream:
 	var sound_paths:Array = get_files_at(sound_directory)
 	return load(sound_directory.path_join(sound_paths.pick_random()))
 
+func all_girl_paths()->Dictionary:
+	var girl_paths:Dictionary = {}
+	for type:String in messages.keys():
+		var girl_directory:String = addon_path.path_join("Images/Girls").path_join(type)
+		girl_paths[type] = get_files_at(girl_directory)
+	return girl_paths
+
 func transition_overlay(to_visible:bool)->void:
 	var background:Control = overlay_dock.get_node("Background")
 	var transition:Tween = get_tree().create_tween()
@@ -94,7 +112,70 @@ func transition_overlay(to_visible:bool)->void:
 	
 	await transition.finished
 
-func get_files_at(directory:String)->Array:
+func fill_catalog():
+	# Get girl paths
+	var all_paths:Dictionary = all_girl_paths()
+	var seen_paths:Dictionary = seen_girl_paths()
+	
+	# Get catalog container
+	var flow:FlowContainer = catalog_dock.get_node("Background/Scroll/Flow")
+	var portrait_template:TextureRect = flow.get_node("Portrait")
+	
+	# Clear existing girls
+	for portrait:Node in flow.get_children():
+		if portrait != portrait_template:
+			portrait.queue_free()
+	
+	# Add each girl to catalog
+	for type:String in all_paths:
+		for girl_path:String in all_paths[type]:
+			var girl_pathname = girl_path.get_basename()
+			
+			# Create new portrait
+			var portrait:TextureRect = portrait_template.duplicate()
+			# Set portrait texture to girl
+			portrait.texture = load(addon_path.path_join("Images/Girls").path_join(type).path_join(girl_path))
+			
+			# Show girl if seen
+			if seen_paths.has(girl_pathname):
+				portrait.tooltip_text = girl_pathname \
+					+ "\nType: " + type \
+					+ "\nSeen: " + str(seen_paths[girl_pathname]) + " times"
+			# Lock girl if not seen
+			else:
+				portrait.self_modulate = Color.BLACK
+				portrait.tooltip_text = "Locked"
+			
+			# Add girl to catalog
+			portrait.show()
+			flow.add_child(portrait)
+			
+			# Wait to prevent freezing
+			await get_tree().process_frame
+
+func save_progress(progress:Dictionary)->void:
+	var save_file:FileAccess = FileAccess.open(save_path, FileAccess.WRITE)
+	save_file.store_string(JSON.stringify(progress))
+	save_file.close()
+
+func load_progress()->Dictionary:
+	var save_file:String = FileAccess.get_file_as_string(save_path)
+	if save_file.is_empty(): return {}
+	return JSON.parse_string(save_file)
+
+func save_seen_girl(girl_pathname:String)->void:
+	girl_pathname = girl_pathname.get_file().get_basename()
+	var progress:Dictionary = load_progress()
+	var seen_girls:Dictionary = progress.get_or_add("seen", {})
+	seen_girls[girl_pathname] = seen_girls.get_or_add(girl_pathname, 0) + 1
+	save_progress(progress)
+	fill_catalog()
+
+func seen_girl_paths()->Dictionary:
+	var progress:Dictionary = load_progress()
+	return progress.get_or_add("seen", {})
+
+static func get_files_at(directory:String)->Array:
 	var files:Array = []
 	for file:String in DirAccess.get_files_at(directory):
 		if file.ends_with(".import"):

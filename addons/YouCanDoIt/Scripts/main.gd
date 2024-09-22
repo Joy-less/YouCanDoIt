@@ -8,6 +8,7 @@ extends EditorPlugin
 @export var transition_distance:float = 540
 @export var volume_db:float = -10
 
+var export_stripper:EditorExportPlugin = YouCanDoItExportStripper.new()
 var overlay_dock:Control = load(addon_path.path_join("Scenes/OverlayDock.tscn")).instantiate()
 var messages:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(addon_path.path_join("Text/Messages.json")))
 var timer_seconds:float = 0
@@ -17,12 +18,16 @@ const addon_path:String = "res://addons/YouCanDoIt"
 func _enter_tree()->void:
 	reset_timer()
 	overlay_dock.hide()
-	# Setup docks
+	# Add dock
 	EditorInterface.get_editor_main_screen().add_child(overlay_dock)
+	# Add export stripper
+	add_export_plugin(export_stripper)
 
 func _exit_tree()->void:
-	# Cleanup docks
+	# Cleanup dock
 	overlay_dock.queue_free()
+	# Remove export stripper
+	remove_export_plugin(export_stripper)
 
 func _process(delta:float)->void:
 	# Debounce
@@ -95,3 +100,9 @@ func get_files_at(directory:String)->Array:
 		if file.ends_with(".import"):
 			files.append(file.trim_suffix(".import"))
 	return files
+
+class YouCanDoItExportStripper extends EditorExportPlugin:
+	func _export_file(path:String, type:String, features:PackedStringArray)->void:
+		# Strip plugin files from export
+		if path.begins_with(addon_path):
+			skip()

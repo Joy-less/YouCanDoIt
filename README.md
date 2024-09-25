@@ -27,6 +27,5 @@ This plugin is for entertainment purposes only.
 - Inspired by [Anime Girl Messages](https://github.com/raphtalia/AnimeGirlMessages) by [SnakeWorl](https://www.roblox.com/users/633527)
 - [Anime Girls Holding Programming Books](https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books) by [cat-milk](https://github.com/cat-milk)
 - [Speech Bubble](https://pixabay.com/vectors/speech-bubble-speech-balloon-chat-145975) by [OpenClipart-Vectors](https://pixabay.com/users/openclipart-vectors-30363/)
-- [Nya](https://freesound.org/people/Mike_bes/sounds/336012) by [Mike_bes](https://freesound.org/people/Mike_bes)
-- [Hello](https://freesound.org/people/miiumiiu/sounds/550890) & [Hi](https://freesound.org/people/miiumiiu/sounds/550889) by [miiumiiu](https://freesound.org/people/miiumiiu)
-- [Pop](https://freesound.org/people/Vilkas_Sound/sounds/463393) by [Vilkas_Sound](https://freesound.org/people/Vilkas_Sound)
+- [Nya](https://freesound.org/s/336012) by [Mike_bes](https://freesound.org/people/Mike_bes)
+- [Hello](https://freesound.org/s/550890) & [Hi](https://freesound.org/s/550889) & [Hii](https://freesound.org/s/550891) by [miiumiiu](https://freesound.org/people/miiumiiu)

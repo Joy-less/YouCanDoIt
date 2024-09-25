@@ -115,16 +115,21 @@ func transition_overlay(to_visible:bool)->void:
 func fill_catalog():
 	# Get girl paths
 	var all_paths:Dictionary = all_girl_paths()
-	var seen_paths:Dictionary = seen_girl_paths()
+	var seen_pathnames:Dictionary = seen_girl_pathnames()
 	
-	# Get catalog container
+	# Get catalog nodes
 	var flow:FlowContainer = catalog_dock.get_node("Background/Scroll/Flow")
 	var portrait_template:TextureRect = flow.get_node("Portrait")
+	var counter_label:Label = catalog_dock.get_node("Background/Counter")
 	
 	# Clear existing girls
 	for portrait:Node in flow.get_children():
 		if portrait != portrait_template:
 			portrait.queue_free()
+	
+	# Count girls
+	var unseen_count:int = 0
+	var seen_count:int = 0
 	
 	# Add each girl to catalog
 	for type:String in all_paths:
@@ -137,12 +142,14 @@ func fill_catalog():
 			portrait.texture = load(addon_path.path_join("Images/Girls").path_join(type).path_join(girl_path))
 			
 			# Show girl if seen
-			if seen_paths.has(girl_pathname):
+			if seen_pathnames.has(girl_pathname):
+				seen_count += 1
 				portrait.tooltip_text = girl_pathname \
-					+ "\nType: " + type \
-					+ "\nSeen: " + str(seen_paths[girl_pathname]) + " times"
+					+ "\nType: {0}".format([type]) \
+					+ "\nSeen: {0} times".format([seen_pathnames[girl_pathname]])
 			# Lock girl if not seen
 			else:
+				unseen_count += 1
 				portrait.self_modulate = Color.BLACK
 				portrait.tooltip_text = "Locked"
 			
@@ -152,6 +159,9 @@ func fill_catalog():
 			
 			# Wait to prevent freezing
 			await get_tree().process_frame
+	
+	# Render counter
+	counter_label.text = "Seen: {0}/{1}".format([seen_count, seen_count + unseen_count])
 
 func save_progress(progress:Dictionary)->void:
 	var save_file:FileAccess = FileAccess.open(save_path, FileAccess.WRITE)
@@ -171,7 +181,7 @@ func save_seen_girl(girl_pathname:String)->void:
 	save_progress(progress)
 	fill_catalog()
 
-func seen_girl_paths()->Dictionary:
+func seen_girl_pathnames()->Dictionary:
 	var progress:Dictionary = load_progress()
 	return progress.get_or_add("seen", {})
 

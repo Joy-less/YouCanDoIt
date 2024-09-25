@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1m1fmbl0giqi"]
+[gd_scene load_steps=3 format=3 uid="uid://b1m1fmbl0giqi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xdbgf"]
 font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_lpkqd"]
+font_size = 20
 
 [node name="CatalogDock" type="Control"]
 custom_minimum_size = Vector2(0, 200)
@@ -26,9 +29,23 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 50.0
 grow_horizontal = 2
-text = "Catalog"
+text = "Girl Catalog"
 label_settings = SubResource("LabelSettings_xdbgf")
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Counter" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_right = -15.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "Seen: 0/0"
+label_settings = SubResource("LabelSettings_lpkqd")
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Scroll" type="ScrollContainer" parent="Background"]

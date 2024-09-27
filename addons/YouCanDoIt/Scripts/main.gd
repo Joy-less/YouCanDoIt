@@ -48,8 +48,8 @@ func _process(delta:float)->void:
 	# Show overlay
 	var type:String = random_type()
 	var girl:Texture2D = random_girl(type)
-	overlay_dock.get_node("Background/SpeechBubble/SpeechLabel").text = random_message(type)
-	overlay_dock.get_node("Background/Girl").texture = girl
+	overlay_dock.get_node(^"Background/SpeechBubble/SpeechLabel").text = random_message(type)
+	overlay_dock.get_node(^"Background/Girl").texture = girl
 	overlay_dock.show()
 	
 	# Save girl as seen
@@ -59,7 +59,7 @@ func _process(delta:float)->void:
 	await transition_overlay(true)
 	
 	# Play sound
-	var audio_player:AudioStreamPlayer = overlay_dock.get_node("AudioPlayer")
+	var audio_player:AudioStreamPlayer = overlay_dock.get_node(^"AudioPlayer")
 	audio_player.stream = random_sound()
 	audio_player.volume_db = volume_db
 	audio_player.play()
@@ -100,15 +100,15 @@ func all_girl_paths()->Dictionary:
 	return girl_paths
 
 func transition_overlay(to_visible:bool)->void:
-	var background:Control = overlay_dock.get_node("Background")
+	var background:Control = overlay_dock.get_node(^"Background")
 	var transition:Tween = get_tree().create_tween()
 	
 	if to_visible:
 		background.position.y = transition_distance
-		transition.tween_property(background, "position:y", 0, transition_seconds)
+		transition.tween_property(background, ^"position:y", 0, transition_seconds)
 	else:
 		background.position.y = 0
-		transition.tween_property(background, "position:y", transition_distance, transition_seconds)
+		transition.tween_property(background, ^"position:y", transition_distance, transition_seconds)
 	
 	await transition.finished
 
@@ -118,9 +118,9 @@ func fill_catalog():
 	var seen_pathnames:Dictionary = seen_girl_pathnames()
 	
 	# Get catalog nodes
-	var flow:FlowContainer = catalog_dock.get_node("Background/Scroll/Flow")
-	var portrait_template:TextureRect = flow.get_node("Portrait")
-	var counter_label:Label = catalog_dock.get_node("Background/Counter")
+	var flow:FlowContainer = catalog_dock.get_node(^"Background/Scroll/Flow")
+	var portrait_template:TextureRect = flow.get_node(^"Portrait")
+	var counter_label:Label = catalog_dock.get_node(^"Background/Counter")
 	
 	# Clear existing girls
 	for portrait:Node in flow.get_children():

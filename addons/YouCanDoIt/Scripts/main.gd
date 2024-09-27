@@ -207,5 +207,5 @@ static func get_files_at(directory:String)->Array:
 class YouCanDoItExportStripper extends EditorExportPlugin:
 	func _export_file(path:String, type:String, features:PackedStringArray)->void:
 		# Strip plugin files from export
-		if path.begins_with(addon_path):
+		if path.begins_with(addon_path.path_join("")):
 			skip()

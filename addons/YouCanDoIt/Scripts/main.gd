@@ -12,6 +12,15 @@ var export_stripper:EditorExportPlugin = YouCanDoItExportStripper.new()
 var overlay_dock:Control = load(addon_path.path_join("Scenes/OverlayDock.tscn")).instantiate()
 var catalog_dock:Control = load(addon_path.path_join("Scenes/CatalogDock.tscn")).instantiate()
 var messages:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(addon_path.path_join("Text/Messages.json")))
+
+var flow:FlowContainer = catalog_dock.get_node(^"Background/Scroll/Flow")
+var portrait_template:TextureRect = flow.get_node(^"Portrait")
+var counter_label:Label = catalog_dock.get_node(^"Background/Counter")
+var filter_input:LineEdit = catalog_dock.get_node(^"Background/Filter")
+var speech_label:Label = overlay_dock.get_node(^"Background/SpeechBubble/SpeechLabel")
+var girl_rect:TextureRect = overlay_dock.get_node(^"Background/Girl")
+var audio_player:AudioStreamPlayer = overlay_dock.get_node(^"AudioPlayer")
+
 var timer_seconds:float = 0
 var is_application_focused:bool = true
 
@@ -28,6 +37,8 @@ func _enter_tree()->void:
 	add_export_plugin(export_stripper)
 	# Fill initial catalog
 	fill_catalog()
+	# Filter catalog
+	filter_input.text_changed.connect(filter_catalog)
 
 func _exit_tree()->void:
 	# Remove docks
@@ -53,8 +64,8 @@ func _process(delta:float)->void:
 	# Show overlay
 	var type:String = random_type()
 	var girl:Texture2D = random_girl(type)
-	overlay_dock.get_node(^"Background/SpeechBubble/SpeechLabel").text = random_message(type)
-	overlay_dock.get_node(^"Background/Girl").texture = girl
+	speech_label.text = random_message(type)
+	girl_rect.texture = girl
 	overlay_dock.show()
 	
 	# Save girl as seen
@@ -64,7 +75,6 @@ func _process(delta:float)->void:
 	await transition_overlay(true)
 	
 	# Play sound
-	var audio_player:AudioStreamPlayer = overlay_dock.get_node(^"AudioPlayer")
 	audio_player.stream = random_sound()
 	audio_player.volume_db = volume_db
 	audio_player.play()
@@ -129,15 +139,11 @@ func fill_catalog():
 	var all_paths:Dictionary = all_girl_paths()
 	var seen_pathnames:Dictionary = seen_girl_pathnames()
 	
-	# Get catalog nodes
-	var flow:FlowContainer = catalog_dock.get_node(^"Background/Scroll/Flow")
-	var portrait_template:TextureRect = flow.get_node(^"Portrait")
-	var counter_label:Label = catalog_dock.get_node(^"Background/Counter")
-	
 	# Clear existing girls
 	for portrait:Node in flow.get_children():
-		if portrait != portrait_template:
-			portrait.queue_free()
+		if portrait == portrait_template:
+			continue
+		portrait.queue_free()
 	
 	# Count girls
 	var unseen_count:int = 0
@@ -196,6 +202,18 @@ func save_seen_girl(girl_pathname:String)->void:
 func seen_girl_pathnames()->Dictionary:
 	var progress:Dictionary = load_progress()
 	return progress.get_or_add("seen", {})
+
+func filter_catalog(filter:String = "")->void:
+	for portrait:Node in flow.get_children():
+		if portrait == portrait_template:
+			continue
+		if filter.length() == 0:
+			portrait.show()
+		elif portrait.self_modulate == Color.BLACK:
+			portrait.hide()
+		else:
+			var girl_pathname:String = portrait.texture.resource_path.get_file().get_basename()
+			portrait.visible = girl_pathname.to_lower().contains(filter.to_lower())
 
 static func get_files_at(directory:String)->Array:
 	var files:Array = []

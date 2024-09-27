@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1m1fmbl0giqi"]
+[gd_scene load_steps=5 format=3 uid="uid://b1m1fmbl0giqi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xdbgf"]
 font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_lpkqd"]
 font_size = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0onqo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyfiw"]
 
 [node name="CatalogDock" type="Control"]
 custom_minimum_size = Vector2(0, 200)
@@ -48,6 +52,17 @@ label_settings = SubResource("LabelSettings_lpkqd")
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="Filter" type="LineEdit" parent="Background"]
+layout_mode = 0
+offset_left = 15.0
+offset_right = 265.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0onqo")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jyfiw")
+placeholder_text = "Filter"
+clear_button_enabled = true
+
 [node name="Scroll" type="ScrollContainer" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
@@ -68,5 +83,6 @@ size_flags_horizontal = 3
 visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+focus_mode = 1
 expand_mode = 1
 stretch_mode = 5

@@ -31,3 +31,4 @@ This plugin is for entertainment purposes only.
 - [Speech Bubble](https://pixabay.com/vectors/speech-bubble-speech-balloon-chat-145975) by [OpenClipart-Vectors](https://pixabay.com/users/openclipart-vectors-30363/)
 - [Nya](https://freesound.org/s/336012) by [Mike_bes](https://freesound.org/people/Mike_bes)
 - [Hello](https://freesound.org/s/550890) & [Hi](https://freesound.org/s/550889) & [Hii](https://freesound.org/s/550891) by [miiumiiu](https://freesound.org/people/miiumiiu)
+- Icon made with [Dezgo](https://dezgo.com/txt2img)

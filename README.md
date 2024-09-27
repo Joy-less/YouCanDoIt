@@ -1,3 +1,5 @@
+<img src="https://github.com/Joy-less/YouCanDoIt/blob/main/Assets/Icon.png?raw=true" width=256 />
+
 # You Can Do It!
 
 Anime girls motivate you every 15-30 minutes in Godot 4.

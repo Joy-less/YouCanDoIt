@@ -12,6 +12,7 @@ config_version=5
 
 config/name="You Can Do It!"
 config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://Assets/Icon.png"
 
 [display]
 

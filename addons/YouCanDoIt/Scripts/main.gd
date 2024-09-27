@@ -13,6 +13,7 @@ var overlay_dock:Control = load(addon_path.path_join("Scenes/OverlayDock.tscn"))
 var catalog_dock:Control = load(addon_path.path_join("Scenes/CatalogDock.tscn")).instantiate()
 var messages:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(addon_path.path_join("Text/Messages.json")))
 var timer_seconds:float = 0
+var is_application_focused:bool = true
 
 const addon_path:String = "res://addons/YouCanDoIt"
 const save_path:String = "user://YouCanDoItSave.json"
@@ -45,6 +46,10 @@ func _process(delta:float)->void:
 	if timer_seconds > 0: return
 	reset_timer()
 	
+	# Wait until editor focused
+	while not is_application_focused:
+		await get_tree().create_timer(0.1).timeout
+	
 	# Show overlay
 	var type:String = random_type()
 	var girl:Texture2D = random_girl(type)
@@ -72,6 +77,13 @@ func _process(delta:float)->void:
 	
 	# Hide overlay
 	overlay_dock.hide()
+
+func _notification(what:int)->void:
+	match what:
+		NOTIFICATION_APPLICATION_FOCUS_IN:
+			is_application_focused = true
+		NOTIFICATION_APPLICATION_FOCUS_OUT:
+			is_application_focused = false
 
 func reset_timer()->void:
 	timer_seconds = randf_range(min_interval_minutes, max_interval_minutes) * 60

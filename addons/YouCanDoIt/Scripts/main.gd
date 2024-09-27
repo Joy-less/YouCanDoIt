@@ -23,6 +23,7 @@ var audio_player:AudioStreamPlayer = overlay_dock.get_node(^"AudioPlayer")
 
 var timer_seconds:float = 0
 var is_application_focused:bool = true
+var debounce:bool = false
 
 const addon_path:String = "res://addons/YouCanDoIt"
 const save_path:String = "user://YouCanDoItSave.json"
@@ -49,13 +50,14 @@ func _exit_tree()->void:
 	remove_export_plugin(export_stripper)
 
 func _process(delta:float)->void:
-	# Debounce
-	if overlay_dock.visible: return
-	
 	# Progress timer
 	timer_seconds -= delta
 	if timer_seconds > 0: return
 	reset_timer()
+	
+	# Debounce
+	if debounce: return
+	debounce = true
 	
 	# Wait until editor focused
 	while not is_application_focused:
@@ -87,6 +89,9 @@ func _process(delta:float)->void:
 	
 	# Hide overlay
 	overlay_dock.hide()
+	
+	# Reset debounce
+	debounce = false
 
 func _notification(what:int)->void:
 	match what:

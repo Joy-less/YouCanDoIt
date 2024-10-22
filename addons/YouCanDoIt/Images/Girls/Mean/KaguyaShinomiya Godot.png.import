@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbf58ve56e5e0"
-path="res://.godot/imported/KaguyaShinomiya Godot.png-95dd7db0ab684a8a2ab90a27454e700e.ctex"
+path.s3tc="res://.godot/imported/KaguyaShinomiya Godot.png-95dd7db0ab684a8a2ab90a27454e700e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Mean/KaguyaShinomiya Godot.png"
-dest_files=["res://.godot/imported/KaguyaShinomiya Godot.png-95dd7db0ab684a8a2ab90a27454e700e.ctex"]
+dest_files=["res://.godot/imported/KaguyaShinomiya Godot.png-95dd7db0ab684a8a2ab90a27454e700e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

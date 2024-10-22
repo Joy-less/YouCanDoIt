@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bshj3xsvrn1pc"
-path="res://.godot/imported/FujiwaraChika ML.png-98f9f4849ac8051712e161207c2fdd89.ctex"
+path.s3tc="res://.godot/imported/FujiwaraChika ML.png-98f9f4849ac8051712e161207c2fdd89.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/FujiwaraChika ML.png"
-dest_files=["res://.godot/imported/FujiwaraChika ML.png-98f9f4849ac8051712e161207c2fdd89.ctex"]
+dest_files=["res://.godot/imported/FujiwaraChika ML.png-98f9f4849ac8051712e161207c2fdd89.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

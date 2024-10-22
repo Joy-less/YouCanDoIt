@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcsas1ysk00v0"
-path="res://.godot/imported/Vigne Architecture.png-795cf0f1f2ce49f89d0ae8ab0d91c7ff.ctex"
+path.s3tc="res://.godot/imported/Vigne Architecture.png-795cf0f1f2ce49f89d0ae8ab0d91c7ff.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Mean/Vigne Architecture.png"
-dest_files=["res://.godot/imported/Vigne Architecture.png-795cf0f1f2ce49f89d0ae8ab0d91c7ff.ctex"]
+dest_files=["res://.godot/imported/Vigne Architecture.png-795cf0f1f2ce49f89d0ae8ab0d91c7ff.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

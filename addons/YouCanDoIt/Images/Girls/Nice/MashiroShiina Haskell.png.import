@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5yniy4cp106s"
-path="res://.godot/imported/MashiroShiina Haskell.png-a50c2827cffdd96cd8a1776e5e789633.ctex"
+path.s3tc="res://.godot/imported/MashiroShiina Haskell.png-a50c2827cffdd96cd8a1776e5e789633.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/MashiroShiina Haskell.png"
-dest_files=["res://.godot/imported/MashiroShiina Haskell.png-a50c2827cffdd96cd8a1776e5e789633.ctex"]
+dest_files=["res://.godot/imported/MashiroShiina Haskell.png-a50c2827cffdd96cd8a1776e5e789633.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

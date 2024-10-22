@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddd2wwcxyjjbr"
-path="res://.godot/imported/Unknown PHP.png-9be7aa13003b79e93061ce546a03fc58.ctex"
+path.s3tc="res://.godot/imported/Unknown PHP.png-9be7aa13003b79e93061ce546a03fc58.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/Unknown PHP.png"
-dest_files=["res://.godot/imported/Unknown PHP.png-9be7aa13003b79e93061ce546a03fc58.ctex"]
+dest_files=["res://.godot/imported/Unknown PHP.png-9be7aa13003b79e93061ce546a03fc58.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

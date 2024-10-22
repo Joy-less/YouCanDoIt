@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfv3bbpgx66b1"
-path="res://.godot/imported/IchinoseChizuru C++.png-adb80ca2ab3d618746b7f8f8faef7be8.ctex"
+path.s3tc="res://.godot/imported/IchinoseChizuru C++.png-adb80ca2ab3d618746b7f8f8faef7be8.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Mean/IchinoseChizuru C++.png"
-dest_files=["res://.godot/imported/IchinoseChizuru C++.png-adb80ca2ab3d618746b7f8f8faef7be8.ctex"]
+dest_files=["res://.godot/imported/IchinoseChizuru C++.png-adb80ca2ab3d618746b7f8f8faef7be8.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

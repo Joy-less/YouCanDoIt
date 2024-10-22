@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b075getcjxctp"
-path="res://.godot/imported/Menhera DesignPatterns.png-1e3b36bc2e78f5d58a0e21cbe424c507.ctex"
+path.s3tc="res://.godot/imported/Menhera DesignPatterns.png-1e3b36bc2e78f5d58a0e21cbe424c507.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/Menhera DesignPatterns.png"
-dest_files=["res://.godot/imported/Menhera DesignPatterns.png-1e3b36bc2e78f5d58a0e21cbe424c507.ctex"]
+dest_files=["res://.godot/imported/Menhera DesignPatterns.png-1e3b36bc2e78f5d58a0e21cbe424c507.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

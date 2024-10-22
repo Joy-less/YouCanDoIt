@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5kvjame2lrxs"
-path="res://.godot/imported/ShizukaYoshimoto C.png-be202a6135835a206c8b9b5e081bb523.ctex"
+path.s3tc="res://.godot/imported/ShizukaYoshimoto C.png-be202a6135835a206c8b9b5e081bb523.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/ShizukaYoshimoto C.png"
-dest_files=["res://.godot/imported/ShizukaYoshimoto C.png-be202a6135835a206c8b9b5e081bb523.ctex"]
+dest_files=["res://.godot/imported/ShizukaYoshimoto C.png-be202a6135835a206c8b9b5e081bb523.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

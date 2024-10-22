@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://67ijwivcn8xi"
-path="res://.godot/imported/TsukasaYuzaki Algorithms.png-d36e7b5811a39bb542608c315f8a4cc8.ctex"
+path.s3tc="res://.godot/imported/TsukasaYuzaki Algorithms.png-d36e7b5811a39bb542608c315f8a4cc8.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Chill/TsukasaYuzaki Algorithms.png"
-dest_files=["res://.godot/imported/TsukasaYuzaki Algorithms.png-d36e7b5811a39bb542608c315f8a4cc8.ctex"]
+dest_files=["res://.godot/imported/TsukasaYuzaki Algorithms.png-d36e7b5811a39bb542608c315f8a4cc8.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

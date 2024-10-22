@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf4ehmx4f3nm3"
-path="res://.godot/imported/RengeMiyauchi ReCT.png-53f890ae9968805a085ed1d9c75cf842.ctex"
+path.s3tc="res://.godot/imported/RengeMiyauchi ReCT.png-53f890ae9968805a085ed1d9c75cf842.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Mean/RengeMiyauchi ReCT.png"
-dest_files=["res://.godot/imported/RengeMiyauchi ReCT.png-53f890ae9968805a085ed1d9c75cf842.ctex"]
+dest_files=["res://.godot/imported/RengeMiyauchi ReCT.png-53f890ae9968805a085ed1d9c75cf842.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

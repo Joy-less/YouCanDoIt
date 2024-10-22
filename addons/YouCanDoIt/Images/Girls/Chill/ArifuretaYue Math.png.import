@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4mulsylissvx"
-path="res://.godot/imported/ArifuretaYue Math.png-8ecbe723373d7d5124b58dae47eb2258.ctex"
+path.s3tc="res://.godot/imported/ArifuretaYue Math.png-8ecbe723373d7d5124b58dae47eb2258.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Chill/ArifuretaYue Math.png"
-dest_files=["res://.godot/imported/ArifuretaYue Math.png-8ecbe723373d7d5124b58dae47eb2258.ctex"]
+dest_files=["res://.godot/imported/ArifuretaYue Math.png-8ecbe723373d7d5124b58dae47eb2258.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

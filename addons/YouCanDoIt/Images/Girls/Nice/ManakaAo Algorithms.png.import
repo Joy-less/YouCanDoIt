@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfiuc7rnsrb7j"
-path="res://.godot/imported/ManakaAo Algorithms.png-c37e944f5d0431a6020f895471cb544d.ctex"
+path.s3tc="res://.godot/imported/ManakaAo Algorithms.png-c37e944f5d0431a6020f895471cb544d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/ManakaAo Algorithms.png"
-dest_files=["res://.godot/imported/ManakaAo Algorithms.png-c37e944f5d0431a6020f895471cb544d.ctex"]
+dest_files=["res://.godot/imported/ManakaAo Algorithms.png-c37e944f5d0431a6020f895471cb544d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

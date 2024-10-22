@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://busswhimmc6cx"
-path="res://.godot/imported/Emilia Python.png-df28bc849beee7b2aba9ffef47025486.ctex"
+path.s3tc="res://.godot/imported/Emilia Python.png-df28bc849beee7b2aba9ffef47025486.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Chill/Emilia Python.png"
-dest_files=["res://.godot/imported/Emilia Python.png-df28bc849beee7b2aba9ffef47025486.ctex"]
+dest_files=["res://.godot/imported/Emilia Python.png-df28bc849beee7b2aba9ffef47025486.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buy266prd41ru"
-path="res://.godot/imported/HakuiKoyori Modding.png-b37ca86f7744b929b3003f5a862ef324.ctex"
+path.s3tc="res://.godot/imported/HakuiKoyori Modding.png-b37ca86f7744b929b3003f5a862ef324.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/HakuiKoyori Modding.png"
-dest_files=["res://.godot/imported/HakuiKoyori Modding.png-b37ca86f7744b929b3003f5a862ef324.ctex"]
+dest_files=["res://.godot/imported/HakuiKoyori Modding.png-b37ca86f7744b929b3003f5a862ef324.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

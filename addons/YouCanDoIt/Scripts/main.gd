@@ -6,7 +6,6 @@ extends EditorPlugin
 @export var duration_seconds:float = 5
 @export var transition_seconds:float = 1
 @export var transition_distance:float = 540
-@export var volume_db:float = -10
 
 var export_stripper:EditorExportPlugin = YouCanDoItExportStripper.new()
 var overlay_dock:Control = load(addon_path.path_join("Scenes/OverlayDock.tscn")).instantiate()
@@ -78,7 +77,6 @@ func _process(delta:float)->void:
 	
 	# Play sound
 	audio_player.stream = random_sound()
-	audio_player.volume_db = volume_db
 	audio_player.play()
 	
 	# Wait duration

@@ -80,3 +80,4 @@ text_overrun_behavior = 3
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vqfxa")
+volume_db = -5.0

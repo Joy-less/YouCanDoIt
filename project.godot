@@ -14,6 +14,10 @@ config/name="You Can Do It!"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Assets/Icon.png"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
 [display]
 
 window/size/viewport_width=960

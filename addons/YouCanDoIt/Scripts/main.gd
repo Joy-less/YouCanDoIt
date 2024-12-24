@@ -200,7 +200,8 @@ func refresh_catalog():
 			flow.add_child(portrait)
 			
 			# Wait to prevent freezing
-			await get_tree().process_frame
+			if ((seen_count + unseen_count) % 15 == 0):
+				await get_tree().process_frame
 	
 	# Render counter
 	counter_label.text = "Seen: {0}/{1}".format([seen_count, seen_count + unseen_count])

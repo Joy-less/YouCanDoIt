@@ -207,7 +207,7 @@ func refresh_catalog():
 
 func save_progress(progress:Dictionary)->void:
 	var save_file:FileAccess = FileAccess.open(save_path, FileAccess.WRITE)
-	save_file.store_string(JSON.stringify(progress))
+	save_file.store_string(JSON.stringify(progress, "\t"))
 	save_file.close()
 
 func load_progress()->Dictionary:

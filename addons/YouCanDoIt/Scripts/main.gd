@@ -1,8 +1,6 @@
 @tool
 extends EditorPlugin
 
-@export var min_interval_minutes:float = 15
-@export var max_interval_minutes:float = 30
 @export var duration_seconds:float = 5
 @export var transition_seconds:float = 1
 @export var transition_distance:float = 540
@@ -21,7 +19,9 @@ var counter_label:Label = catalog_dock.get_node(^"Background/Counter")
 var filter_input:LineEdit = catalog_dock.get_node(^"Background/Filter")
 var settings_button:BaseButton = catalog_dock.get_node(^"Background/Settings")
 var settings_background:Panel = catalog_dock.get_node(^"Background/SettingsBackground")
-var settings_information_label:Label = settings_background.get_node(^"Information")
+var settings_information_label:Label = settings_background.get_node(^"Scroll/Box/Information")
+var settings_interval_min_box:SpinBox = settings_background.get_node(^"Scroll/Box/Interval/Panel/MinBox")
+var settings_interval_max_box:SpinBox = settings_background.get_node(^"Scroll/Box/Interval/Panel/MaxBox")
 
 var is_application_focused:bool = true
 var girl_debounce:bool = false
@@ -44,6 +44,8 @@ func _enter_tree()->void:
 	# Connect control events
 	filter_input.text_changed.connect(filter_catalog)
 	settings_button.pressed.connect(toggle_settings)
+	settings_interval_min_box.value_changed.connect(func(_value): settings_interval_changed())
+	settings_interval_max_box.value_changed.connect(func(_value): settings_interval_changed())
 
 func _exit_tree()->void:
 	# Remove docks
@@ -119,7 +121,8 @@ func update_girl_countdown(delta:float)->void:
 	girl_debounce = false
 
 func reset_timer()->void:
-	girl_countdown_seconds = randf_range(min_interval_minutes, max_interval_minutes) * 60
+	var interval_minutes:Vector2 = load_interval_minutes()
+	girl_countdown_seconds = randf_range(interval_minutes.x, interval_minutes.y) * 60
 
 func random_type()->String:
 	return messages.keys().pick_random()
@@ -129,12 +132,12 @@ func random_message(type:String)->String:
 
 func random_girl(type:String)->Texture2D:
 	var girl_directory:String = addon_path.path_join("Images/Girls").path_join(type)
-	var girl_paths:Array = get_files_at(girl_directory)
+	var girl_paths:Array[String] = get_files_at(girl_directory)
 	return load(girl_directory.path_join(girl_paths.pick_random()))
 
 func random_sound()->AudioStream:
 	var sound_directory:String = addon_path.path_join("Sounds")
-	var sound_paths:Array = get_files_at(sound_directory)
+	var sound_paths:Array[String] = get_files_at(sound_directory)
 	return load(sound_directory.path_join(sound_paths.pick_random()))
 
 func all_girl_paths()->Dictionary:
@@ -160,7 +163,7 @@ func transition_overlay(to_visible:bool)->void:
 func refresh_catalog():
 	# Get girl paths
 	var all_paths:Dictionary = all_girl_paths()
-	var seen_pathnames:Dictionary = seen_girl_pathnames()
+	var seen_pathnames:Dictionary = load_seen_girl_pathnames()
 	
 	# Clear existing girls
 	for portrait:Node in flow.get_children():
@@ -221,9 +224,22 @@ func add_total_minutes(minutes:int)->void:
 	progress["total_minutes"] = progress.get_or_add("total_minutes", 0) + minutes
 	save_progress(progress)
 
-func total_minutes()->int:
+func load_total_minutes()->int:
 	var progress:Dictionary = load_progress()
 	return progress.get_or_add("total_minutes", 0)
+
+func set_interval_minutes(minutes:Vector2)->void:
+	var progress:Dictionary = load_progress()
+	progress["min_interval_minutes"] = minutes.x
+	progress["max_interval_minutes"] = minutes.y
+	save_progress(progress)
+
+func load_interval_minutes()->Vector2:
+	var progress:Dictionary = load_progress()
+	return Vector2(
+		progress.get_or_add("min_interval_minutes", 15.0),
+		progress.get_or_add("max_interval_minutes", 30.0)
+	)
 
 func add_seen_girl_pathname(girl_pathname:String)->void:
 	girl_pathname = girl_pathname.get_file().get_basename()
@@ -233,7 +249,7 @@ func add_seen_girl_pathname(girl_pathname:String)->void:
 	save_progress(progress)
 	refresh_catalog()
 
-func seen_girl_pathnames()->Dictionary:
+func load_seen_girl_pathnames()->Dictionary:
 	var progress:Dictionary = load_progress()
 	return progress.get_or_add("seen", {})
 
@@ -251,12 +267,20 @@ func filter_catalog(filter:String = "")->void:
 
 func toggle_settings()->void:
 	settings_background.visible = not settings_background.visible
+	
 	settings_information_label.text = \
-		"Total Minutes: {0}".format([total_minutes()]) \
+		"Total Minutes: {0}".format([load_total_minutes()]) \
 		+ "\nPlugin Version: {0}".format([get_plugin_version()])
+	
+	var interval_minutes:Vector2 = load_interval_minutes()
+	settings_interval_min_box.value = interval_minutes.x
+	settings_interval_max_box.value = interval_minutes.y
 
-static func get_files_at(directory:String)->Array:
-	var files:Array = []
+func settings_interval_changed()->void:
+	set_interval_minutes(Vector2(settings_interval_min_box.value, settings_interval_max_box.value))
+
+static func get_files_at(directory:String)->Array[String]:
+	var files:Array[String] = []
 	for file:String in DirAccess.get_files_at(directory):
 		if file.ends_with(".import"):
 			files.append(file.trim_suffix(".import"))

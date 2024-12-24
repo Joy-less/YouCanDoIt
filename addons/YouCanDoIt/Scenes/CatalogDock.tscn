@@ -148,7 +148,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Information" type="Label" parent="Background/SettingsBackground"]
+[node name="Scroll" type="ScrollContainer" parent="Background/SettingsBackground"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -159,5 +159,55 @@ offset_top = -100.0
 offset_right = -5.0
 grow_horizontal = 2
 grow_vertical = 0
+horizontal_scroll_mode = 0
+
+[node name="Box" type="VBoxContainer" parent="Background/SettingsBackground/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Information" type="Label" parent="Background/SettingsBackground/Scroll/Box"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Interval" type="PanelContainer" parent="Background/SettingsBackground/Scroll/Box"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/SettingsBackground/Scroll/Box/Interval"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Appear Interval Minutes"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="Background/SettingsBackground/Scroll/Box/Interval"]
+custom_minimum_size = Vector2(170, 32)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="MinBox" type="SpinBox" parent="Background/SettingsBackground/Scroll/Box/Interval/Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 85.0
+grow_vertical = 2
+size_flags_horizontal = 0
+max_value = 300.0
+custom_arrow_step = 5.0
+
+[node name="MaxBox" type="SpinBox" parent="Background/SettingsBackground/Scroll/Box/Interval/Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -85.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+max_value = 300.0
+custom_arrow_step = 5.0

@@ -208,6 +208,8 @@ func refresh_catalog():
 	
 	# Render counter
 	counter_label.text = "Seen: {0}/{1}".format([seen_count, seen_count + unseen_count])
+	if unseen_count == 0:
+		counter_label.text = "Seen: all {0}!".format([seen_count])
 
 func save_progress(progress:Dictionary)->void:
 	var save_file:FileAccess = FileAccess.open(save_path, FileAccess.WRITE)

@@ -279,7 +279,10 @@ func toggle_settings()->void:
 	settings_interval_max_box.value = interval_minutes.y
 
 func settings_interval_changed()->void:
-	set_interval_minutes(Vector2(settings_interval_min_box.value, settings_interval_max_box.value))
+	set_interval_minutes(Vector2(
+		settings_interval_min_box.value,
+		settings_interval_max_box.value
+	))
 
 static func get_files_at(directory:String)->Array[String]:
 	var files:Array[String] = []

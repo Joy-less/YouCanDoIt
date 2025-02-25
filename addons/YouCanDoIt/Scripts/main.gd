@@ -259,7 +259,7 @@ func filter_catalog(filter:String = "")->void:
 	for portrait:Node in flow.get_children():
 		if portrait == portrait_template:
 			continue
-		if filter.length() == 0:
+		if filter.is_empty():
 			portrait.show()
 		elif portrait.self_modulate == Color.BLACK:
 			portrait.hide()

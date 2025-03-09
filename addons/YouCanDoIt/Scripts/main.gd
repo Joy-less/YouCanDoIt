@@ -161,9 +161,9 @@ func random_sound()->AudioStream:
 
 func all_girl_paths()->Dictionary:
 	var girl_paths:Dictionary = {}
-	for type:String in messages.keys():
-		var girl_directory:String = addon_path.path_join("Images/Girls").path_join(type)
-		girl_paths[type] = get_files_at(girl_directory)
+	for girl_type:String in messages.keys():
+		var girl_directory:String = addon_path.path_join("Images/Girls").path_join(girl_type)
+		girl_paths[girl_type] = get_files_at(girl_directory)
 	#end
 	return girl_paths
 #end

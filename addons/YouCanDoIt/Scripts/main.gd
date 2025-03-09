@@ -89,7 +89,7 @@ func update_girl_countdown(delta:float)->void:
 	
 	# Wait until editor focused
 	while not is_application_focused:
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().process_frame
 	
 	# Show overlay
 	var type:String = random_type()

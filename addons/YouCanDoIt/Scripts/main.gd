@@ -6,8 +6,8 @@ extends EditorPlugin
 @export var transition_distance:float = 540
 
 var export_stripper:EditorExportPlugin = YouCanDoItExportStripper.new()
-var overlay_dock:Control = load(addon_path.path_join("Scenes/OverlayDock.tscn")).instantiate()
-var catalog_dock:Control = load(addon_path.path_join("Scenes/CatalogDock.tscn")).instantiate()
+var overlay_dock:Control = (load(addon_path.path_join("Scenes/OverlayDock.tscn")) as PackedScene).instantiate()
+var catalog_dock:Control = (load(addon_path.path_join("Scenes/CatalogDock.tscn")) as PackedScene).instantiate()
 var messages:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(addon_path.path_join("Text/Messages.json")))
 
 var speech_label:Label = overlay_dock.get_node(^"Background/SpeechBubble/SpeechLabel")

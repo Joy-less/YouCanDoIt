@@ -105,9 +105,9 @@ func update_girl_countdown(delta:float)->void:
 	#end
 	
 	# Show overlay
-	var type:String = random_type()
-	var girl:Texture2D = random_girl(type)
-	speech_label.text = random_message(type)
+	var girl_type:String = random_girl_type()
+	var girl:Texture2D = random_girl(girl_type)
+	speech_label.text = random_message(girl_type)
 	girl_rect.texture = girl
 	overlay_dock.show()
 	
@@ -139,16 +139,16 @@ func reset_timer()->void:
 	girl_countdown_seconds = randf_range(interval_minutes.x, interval_minutes.y) * 60
 #end
 
-func random_type()->String:
+func random_girl_type()->String:
 	return messages.keys().pick_random()
 #end
 
-func random_message(type:String)->String:
-	return messages[type].pick_random()
+func random_message(girl_type:String)->String:
+	return messages[girl_type].pick_random()
 #end
 
-func random_girl(type:String)->Texture2D:
-	var girl_directory:String = addon_path.path_join("Images/Girls").path_join(type)
+func random_girl(girl_type:String)->Texture2D:
+	var girl_directory:String = addon_path.path_join("Images/Girls").path_join(girl_type)
 	var girl_paths:Array[String] = get_files_at(girl_directory)
 	return load(girl_directory.path_join(girl_paths.pick_random()))
 #end
@@ -201,21 +201,21 @@ func refresh_catalog():
 	var seen_count:int = 0
 	
 	# Add each girl to catalog
-	for type:String in all_paths:
-		for girl_path:String in all_paths[type]:
+	for girl_type:String in all_paths:
+		for girl_path:String in all_paths[girl_type]:
 			var girl_pathname = girl_path.get_basename()
 			
 			# Create new portrait
 			var portrait:TextureRect = portrait_template.duplicate()
 			# Set portrait texture to girl
-			portrait.texture = load(addon_path.path_join("Images/Girls").path_join(type).path_join(girl_path))
+			portrait.texture = load(addon_path.path_join("Images/Girls").path_join(girl_type).path_join(girl_path))
 			
 			# Show girl if seen
 			if seen_pathnames.has(girl_pathname):
 				seen_count += 1
 				portrait.tooltip_text = \
 					girl_pathname \
-					+ "\nType: {0}".format([type]) \
+					+ "\nType: {0}".format([girl_type]) \
 					+ "\nSeen: {0} times".format([seen_pathnames[girl_pathname]])
 			# Lock girl if not seen
 			else:

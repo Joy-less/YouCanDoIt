@@ -213,10 +213,11 @@ func refresh_catalog():
 			# Show girl if seen
 			if seen_pathnames.has(girl_pathname):
 				seen_count += 1
+				var seen_times:int = seen_pathnames[girl_pathname]
 				portrait.tooltip_text = \
 					girl_pathname \
 					+ "\nType: {0}".format([girl_type]) \
-					+ "\nSeen: {0} times".format([seen_pathnames[girl_pathname]])
+					+ "\nSeen: {0} times".format([seen_times])
 			# Lock girl if not seen
 			else:
 				unseen_count += 1

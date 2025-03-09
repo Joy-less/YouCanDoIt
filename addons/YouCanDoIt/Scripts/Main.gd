@@ -214,8 +214,7 @@ func refresh_catalog():
 			if seen_pathnames.has(girl_pathname):
 				seen_count += 1
 				var seen_times:int = seen_pathnames[girl_pathname]
-				portrait.tooltip_text = \
-					girl_pathname \
+				portrait.tooltip_text = girl_pathname \
 					+ "\nType: {0}".format([girl_type]) \
 					+ "\nSeen: {0} times".format([seen_times])
 			# Lock girl if not seen
@@ -230,7 +229,7 @@ func refresh_catalog():
 			flow.add_child(portrait)
 			
 			# Wait to prevent freezing
-			if ((seen_count + unseen_count) % 15 == 0):
+			if (seen_count + unseen_count) % 15 == 0:
 				await get_tree().process_frame
 			#end
 		#end
@@ -314,8 +313,7 @@ func filter_catalog(filter:String = "")->void:
 func toggle_settings()->void:
 	settings_background.visible = not settings_background.visible
 	
-	settings_information_label.text = \
-		"Total Minutes: {0}".format([load_total_minutes()]) \
+	settings_information_label.text = "Total Minutes: {0}".format([load_total_minutes()]) \
 		+ "\nPlugin Version: {0}".format([get_plugin_version()])
 	
 	var interval_minutes:Vector2 = load_interval_minutes()

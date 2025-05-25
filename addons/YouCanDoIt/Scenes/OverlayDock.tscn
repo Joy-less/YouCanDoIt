@@ -43,6 +43,7 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="SpeechBubble" type="TextureRect" parent="Background"]
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

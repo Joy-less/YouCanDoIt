@@ -2,6 +2,9 @@
 
 # You Can Do It!
 
+[![Godot Asset Store](https://img.shields.io/github/v/release/Joy-less/YouCanDoIt.svg?label=Godot%20Asset%20Store&logo=godotengine)](https://store.godotengine.org/asset/joyless/you-can-do-it)
+[![Godot Asset Library](https://img.shields.io/github/v/release/Joy-less/YouCanDoIt.svg?label=Godot%20Asset%20Library&logo=godotengine)](https://godotengine.org/asset-library/asset/3267)
+
 Anime girls motivate you every 15-30 minutes in Godot 4.
 
 ## Screenshots

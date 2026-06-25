@@ -36,7 +36,7 @@ texture={
 "compress/hdr_compression": 1,
 "compress/high_quality": false,
 "compress/lossy_quality": 0.8,
-"compress/mode": 1,
+"compress/mode": 2,
 "compress/normal_map": 0,
 "compress/rdo_quality_loss": 0.0,
 "compress/uastc_level": 0,

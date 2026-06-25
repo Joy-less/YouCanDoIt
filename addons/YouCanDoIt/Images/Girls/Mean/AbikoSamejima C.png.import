@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dskxm6kg8kf3q"
-path="res://.godot/imported/AbikoSamejima C.png-46042417e1da6d0f168ac6f99a906a33.ctex"
+path.s3tc="res://.godot/imported/AbikoSamejima C.png-46042417e1da6d0f168ac6f99a906a33.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Mean/AbikoSamejima C.png"
-dest_files=["res://.godot/imported/AbikoSamejima C.png-46042417e1da6d0f168ac6f99a906a33.ctex"]
+dest_files=["res://.godot/imported/AbikoSamejima C.png-46042417e1da6d0f168ac6f99a906a33.s3tc.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.8
 compress/uastc_level=0

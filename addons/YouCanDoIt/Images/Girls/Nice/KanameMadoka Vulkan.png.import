@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqyrmdb4lbg24"
-path="res://.godot/imported/KanameMadoka Vulkan.png-6231348677c30912e5541e170d0f1608.ctex"
+path.s3tc="res://.godot/imported/KanameMadoka Vulkan.png-6231348677c30912e5541e170d0f1608.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/KanameMadoka Vulkan.png"
-dest_files=["res://.godot/imported/KanameMadoka Vulkan.png-6231348677c30912e5541e170d0f1608.ctex"]
+dest_files=["res://.godot/imported/KanameMadoka Vulkan.png-6231348677c30912e5541e170d0f1608.s3tc.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.8
 compress/uastc_level=0

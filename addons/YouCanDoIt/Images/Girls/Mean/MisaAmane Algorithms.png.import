@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ta2iwuf8w5x7"
-path.s3tc="res://.godot/imported/MisaAmane Algorithms.png-3442e256853370c4413979fdac5b4e6d.s3tc.ctex"
+path="res://.godot/imported/MisaAmane Algorithms.png-3442e256853370c4413979fdac5b4e6d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Mean/MisaAmane Algorithms.png"
-dest_files=["res://.godot/imported/MisaAmane Algorithms.png-3442e256853370c4413979fdac5b4e6d.s3tc.ctex"]
+dest_files=["res://.godot/imported/MisaAmane Algorithms.png-3442e256853370c4413979fdac5b4e6d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

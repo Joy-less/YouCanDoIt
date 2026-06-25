@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v4tuvr674hhr"
-path.s3tc="res://.godot/imported/MonaMegistus Architecture.png-2fb995a58a928621e66af019bc7889ce.s3tc.ctex"
+path="res://.godot/imported/MonaMegistus Architecture.png-2fb995a58a928621e66af019bc7889ce.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/MonaMegistus Architecture.png"
-dest_files=["res://.godot/imported/MonaMegistus Architecture.png-2fb995a58a928621e66af019bc7889ce.s3tc.ctex"]
+dest_files=["res://.godot/imported/MonaMegistus Architecture.png-2fb995a58a928621e66af019bc7889ce.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

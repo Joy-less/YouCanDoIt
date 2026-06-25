@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjf5sdyo4lq00"
-path.s3tc="res://.godot/imported/FelixArgyle ABAP.png-ff8a345e9028cb49af6ef3155f4758b8.s3tc.ctex"
+path="res://.godot/imported/FelixArgyle ABAP.png-ff8a345e9028cb49af6ef3155f4758b8.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/FelixArgyle ABAP.png"
-dest_files=["res://.godot/imported/FelixArgyle ABAP.png-ff8a345e9028cb49af6ef3155f4758b8.s3tc.ctex"]
+dest_files=["res://.godot/imported/FelixArgyle ABAP.png-ff8a345e9028cb49af6ef3155f4758b8.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

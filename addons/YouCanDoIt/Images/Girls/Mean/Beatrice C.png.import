@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://caxfj86iiwrrs"
-path.s3tc="res://.godot/imported/Beatrice C.png-8d7b2ab0e322ed810dd75bb16f93829e.s3tc.ctex"
+path="res://.godot/imported/Beatrice C.png-8d7b2ab0e322ed810dd75bb16f93829e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Mean/Beatrice C.png"
-dest_files=["res://.godot/imported/Beatrice C.png-8d7b2ab0e322ed810dd75bb16f93829e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Beatrice C.png-8d7b2ab0e322ed810dd75bb16f93829e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

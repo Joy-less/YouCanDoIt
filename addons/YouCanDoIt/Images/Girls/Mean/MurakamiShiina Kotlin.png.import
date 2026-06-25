@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blko5a1oqa5cg"
-path.s3tc="res://.godot/imported/MurakamiShiina Kotlin.png-cf1d35b7728279fc406377b41dee5c11.s3tc.ctex"
+path="res://.godot/imported/MurakamiShiina Kotlin.png-cf1d35b7728279fc406377b41dee5c11.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Mean/MurakamiShiina Kotlin.png"
-dest_files=["res://.godot/imported/MurakamiShiina Kotlin.png-cf1d35b7728279fc406377b41dee5c11.s3tc.ctex"]
+dest_files=["res://.godot/imported/MurakamiShiina Kotlin.png-cf1d35b7728279fc406377b41dee5c11.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

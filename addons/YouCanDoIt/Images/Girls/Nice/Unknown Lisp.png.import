@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8vnqtq2cu7g7"
-path.s3tc="res://.godot/imported/Unknown Lisp.png-6cb2c68bdeece8e8703e56e1564d8c63.s3tc.ctex"
+path="res://.godot/imported/Unknown Lisp.png-6cb2c68bdeece8e8703e56e1564d8c63.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/Unknown Lisp.png"
-dest_files=["res://.godot/imported/Unknown Lisp.png-6cb2c68bdeece8e8703e56e1564d8c63.s3tc.ctex"]
+dest_files=["res://.godot/imported/Unknown Lisp.png-6cb2c68bdeece8e8703e56e1564d8c63.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

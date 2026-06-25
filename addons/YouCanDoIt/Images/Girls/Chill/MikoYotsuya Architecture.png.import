@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxaod8x6wx011"
-path.s3tc="res://.godot/imported/MikoYotsuya Architecture.png-9d31fb78124d2df90f260ce0f179fb12.s3tc.ctex"
+path="res://.godot/imported/MikoYotsuya Architecture.png-9d31fb78124d2df90f260ce0f179fb12.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Chill/MikoYotsuya Architecture.png"
-dest_files=["res://.godot/imported/MikoYotsuya Architecture.png-9d31fb78124d2df90f260ce0f179fb12.s3tc.ctex"]
+dest_files=["res://.godot/imported/MikoYotsuya Architecture.png-9d31fb78124d2df90f260ce0f179fb12.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

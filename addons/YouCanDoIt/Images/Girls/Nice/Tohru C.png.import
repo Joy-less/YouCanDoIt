@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfbk2rvh7y8mu"
-path.s3tc="res://.godot/imported/Tohru C.png-f39d35ee0a3dd25ca9a31d76905d279e.s3tc.ctex"
+path="res://.godot/imported/Tohru C.png-f39d35ee0a3dd25ca9a31d76905d279e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/Tohru C.png"
-dest_files=["res://.godot/imported/Tohru C.png-f39d35ee0a3dd25ca9a31d76905d279e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Tohru C.png-f39d35ee0a3dd25ca9a31d76905d279e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

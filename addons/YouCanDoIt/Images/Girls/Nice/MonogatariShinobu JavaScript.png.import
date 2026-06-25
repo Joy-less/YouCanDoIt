@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chj1wdyx6sqkj"
-path.s3tc="res://.godot/imported/MonogatariShinobu JavaScript.png-1a93a1302797b9e09cf3fdf184dec4d9.s3tc.ctex"
+path="res://.godot/imported/MonogatariShinobu JavaScript.png-1a93a1302797b9e09cf3fdf184dec4d9.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Nice/MonogatariShinobu JavaScript.png"
-dest_files=["res://.godot/imported/MonogatariShinobu JavaScript.png-1a93a1302797b9e09cf3fdf184dec4d9.s3tc.ctex"]
+dest_files=["res://.godot/imported/MonogatariShinobu JavaScript.png-1a93a1302797b9e09cf3fdf184dec4d9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

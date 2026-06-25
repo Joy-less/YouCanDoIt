@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gofk32nc8ufd"
-path.s3tc="res://.godot/imported/Toujou APL.png-0accf5aa942095ae32f88d531c32ae46.s3tc.ctex"
+path="res://.godot/imported/Toujou APL.png-0accf5aa942095ae32f88d531c32ae46.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://addons/YouCanDoIt/Images/Girls/Chill/Toujou APL.png"
-dest_files=["res://.godot/imported/Toujou APL.png-0accf5aa942095ae32f88d531c32ae46.s3tc.ctex"]
+dest_files=["res://.godot/imported/Toujou APL.png-0accf5aa942095ae32f88d531c32ae46.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

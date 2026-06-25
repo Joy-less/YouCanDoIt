@@ -150,13 +150,13 @@ func random_message(girl_type:String)->String:
 func random_girl(girl_type:String)->Texture2D:
 	var girl_directory:String = addon_path.path_join("Images/Girls").path_join(girl_type)
 	var girl_paths:Array[String] = get_files_at(girl_directory)
-	return load(girl_directory.path_join(girl_paths.pick_random()))
+	return ResourceLoader.load(girl_directory.path_join(girl_paths.pick_random()), "", ResourceLoader.CACHE_MODE_IGNORE)
 #end
 
 func random_sound()->AudioStream:
 	var sound_directory:String = addon_path.path_join("Sounds")
 	var sound_paths:Array[String] = get_files_at(sound_directory)
-	return load(sound_directory.path_join(sound_paths.pick_random()))
+	return ResourceLoader.load(sound_directory.path_join(sound_paths.pick_random()), "", ResourceLoader.CACHE_MODE_IGNORE)
 #end
 
 func all_girl_paths()->Dictionary:
@@ -208,7 +208,7 @@ func refresh_catalog():
 			# Create new portrait
 			var portrait:TextureRect = portrait_template.duplicate()
 			# Set portrait texture to girl
-			portrait.texture = load(addon_path.path_join("Images/Girls").path_join(girl_type).path_join(girl_path))
+			portrait.texture = ResourceLoader.load(addon_path.path_join("Images/Girls").path_join(girl_type).path_join(girl_path), "", ResourceLoader.CACHE_MODE_IGNORE)
 			
 			# Show girl if seen
 			if seen_pathnames.has(girl_pathname):

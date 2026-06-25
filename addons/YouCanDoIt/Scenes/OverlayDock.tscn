@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpqktaek8pr05"]
+[gd_scene format=3 uid="uid://dpqktaek8pr05"]
 
 [ext_resource type="Texture2D" uid="uid://bir8x1daio6qs" path="res://addons/YouCanDoIt/Images/SpeechBubble.svg" id="1_pfykn"]
 [ext_resource type="AudioStream" uid="uid://pn7jy61658eh" path="res://addons/YouCanDoIt/Sounds/Nya.wav" id="2_vqfxa"]
@@ -7,7 +7,7 @@
 font_size = 18
 font_color = Color(0, 0, 0, 1)
 
-[node name="OverlayDock" type="Control"]
+[node name="OverlayDock" type="Control" unique_id=1921228623]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Background" type="Control" parent="."]
+[node name="Background" type="Control" parent="." unique_id=2043043984]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Girl" type="TextureRect" parent="Background"]
+[node name="Girl" type="TextureRect" parent="Background" unique_id=1804039575]
 texture_filter = 4
 layout_mode = 1
 anchors_preset = 3
@@ -42,7 +42,7 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 6
 
-[node name="SpeechBubble" type="TextureRect" parent="Background"]
+[node name="SpeechBubble" type="TextureRect" parent="Background" unique_id=1678902400]
 texture_filter = 4
 layout_mode = 1
 anchors_preset = 3
@@ -62,7 +62,7 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="SpeechLabel" type="Label" parent="Background/SpeechBubble"]
+[node name="SpeechLabel" type="Label" parent="Background/SpeechBubble" unique_id=1692788617]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,6 +79,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 text_overrun_behavior = 3
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1860018511]
 stream = ExtResource("2_vqfxa")
 volume_db = -5.0

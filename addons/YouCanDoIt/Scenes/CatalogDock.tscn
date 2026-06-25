@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1m1fmbl0giqi"]
+[gd_scene format=3 uid="uid://b1m1fmbl0giqi"]
 
 [ext_resource type="Texture2D" uid="uid://c61rfxslbyny6" path="res://addons/YouCanDoIt/Images/SettingsCog.svg" id="1_36y18"]
 
@@ -8,16 +8,16 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_lpkqd"]
 font_size = 20
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0onqo"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyfiw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0onqo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oqd0r"]
 font_size = 26
 
 [sub_resource type="LabelSettings" id="LabelSettings_flnl5"]
 
-[node name="CatalogDock" type="Control"]
+[node name="CatalogDock" type="Control" unique_id=673230874]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 3
 anchors_preset = 15
@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="." unique_id=844986354]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="Background"]
+[node name="Title" type="Label" parent="Background" unique_id=1194777533]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -45,7 +45,7 @@ label_settings = SubResource("LabelSettings_xdbgf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Counter" type="Label" parent="Background"]
+[node name="Counter" type="Label" parent="Background" unique_id=1181722223]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -59,7 +59,7 @@ label_settings = SubResource("LabelSettings_lpkqd")
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Settings" type="TextureButton" parent="Background"]
+[node name="Settings" type="TextureButton" parent="Background" unique_id=716624126]
 texture_filter = 4
 layout_mode = 1
 anchors_preset = 1
@@ -74,18 +74,18 @@ texture_normal = ExtResource("1_36y18")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Filter" type="LineEdit" parent="Background"]
+[node name="Filter" type="LineEdit" parent="Background" unique_id=64517154]
 layout_mode = 0
 offset_left = 15.0
 offset_right = 265.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0onqo")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jyfiw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0onqo")
 placeholder_text = "Filter"
 clear_button_enabled = true
 
-[node name="Scroll" type="ScrollContainer" parent="Background"]
+[node name="Scroll" type="ScrollContainer" parent="Background" unique_id=283235451]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,11 +97,11 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="Flow" type="HFlowContainer" parent="Background/Scroll"]
+[node name="Flow" type="HFlowContainer" parent="Background/Scroll" unique_id=1983866682]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Portrait" type="TextureRect" parent="Background/Scroll/Flow"]
+[node name="Portrait" type="TextureRect" parent="Background/Scroll/Flow" unique_id=260225260]
 visible = false
 texture_filter = 4
 custom_minimum_size = Vector2(150, 150)
@@ -110,7 +110,7 @@ focus_mode = 1
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SettingsBackground" type="Panel" parent="Background"]
+[node name="SettingsBackground" type="Panel" parent="Background" unique_id=886324267]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -125,7 +125,7 @@ offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="Background/SettingsBackground"]
+[node name="Title" type="Label" parent="Background/SettingsBackground" unique_id=452891025]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -137,7 +137,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Flavour" type="Label" parent="Background/SettingsBackground"]
+[node name="Flavour" type="Label" parent="Background/SettingsBackground" unique_id=1153025218]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -150,7 +150,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Scroll" type="ScrollContainer" parent="Background/SettingsBackground"]
+[node name="Scroll" type="ScrollContainer" parent="Background/SettingsBackground" unique_id=1154048933]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -163,21 +163,21 @@ grow_horizontal = 2
 grow_vertical = 0
 horizontal_scroll_mode = 0
 
-[node name="Box" type="VBoxContainer" parent="Background/SettingsBackground/Scroll"]
+[node name="Box" type="VBoxContainer" parent="Background/SettingsBackground/Scroll" unique_id=1010088595]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Information" type="Label" parent="Background/SettingsBackground/Scroll/Box"]
+[node name="Information" type="Label" parent="Background/SettingsBackground/Scroll/Box" unique_id=812571932]
 custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Interval" type="PanelContainer" parent="Background/SettingsBackground/Scroll/Box"]
+[node name="Interval" type="PanelContainer" parent="Background/SettingsBackground/Scroll/Box" unique_id=1571180324]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Background/SettingsBackground/Scroll/Box/Interval"]
+[node name="Label" type="Label" parent="Background/SettingsBackground/Scroll/Box/Interval" unique_id=273095134]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -186,12 +186,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Panel" type="Panel" parent="Background/SettingsBackground/Scroll/Box/Interval"]
+[node name="Panel" type="Panel" parent="Background/SettingsBackground/Scroll/Box/Interval" unique_id=1748095342]
 custom_minimum_size = Vector2(170, 32)
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="MinBox" type="SpinBox" parent="Background/SettingsBackground/Scroll/Box/Interval/Panel"]
+[node name="MinBox" type="SpinBox" parent="Background/SettingsBackground/Scroll/Box/Interval/Panel" unique_id=1840049420]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -201,7 +201,7 @@ size_flags_horizontal = 0
 max_value = 300.0
 custom_arrow_step = 5.0
 
-[node name="MaxBox" type="SpinBox" parent="Background/SettingsBackground/Scroll/Box/Interval/Panel"]
+[node name="MaxBox" type="SpinBox" parent="Background/SettingsBackground/Scroll/Box/Interval/Panel" unique_id=1472056602]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
